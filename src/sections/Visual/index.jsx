@@ -1,4 +1,4 @@
-import underwater from "../../assets/img/visual-underwater.png";
+import work03 from "../../assets/img/artist/work-03.png";
 import { usePanel } from "../../components/common/Panel";
 import { Accent, Label } from "../../components/common/Typography";
 import { WaterCanvas } from "../../components/effects/WaterCanvas";
@@ -12,7 +12,7 @@ export function Visual() {
 
   return (
     <>
-      <WaterCanvas src={underwater} playing={isShown} intensity={1.35} />
+      <WaterCanvas src={work03} playing={isShown} intensity={1.35} />
       <Overlay />
       <Content>
         <Label data-animate>{t("visual.label")}</Label>

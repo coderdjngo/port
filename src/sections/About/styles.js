@@ -128,9 +128,5 @@ export const Details = styled.dl`
   ${media.small} {
     grid-template-columns: 1fr;
     gap: 6px;
-
-    div:nth-child(2) {
-      display: none;
-    }
   }
 `;

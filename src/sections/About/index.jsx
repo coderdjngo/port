@@ -1,8 +1,7 @@
-import aboutShore from "../../assets/img/about-shore.png";
+import work02 from "../../assets/img/artist/work-02.png";
 import { PanelInner, usePanel } from "../../components/common/Panel";
 import { Label } from "../../components/common/Typography";
 import { WaterCanvas } from "../../components/effects/WaterCanvas";
-import { ARTIST } from "../../constants/content";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { Content, Details, Layout, Name, Photo } from "./styles";
 
@@ -12,13 +11,18 @@ export function About() {
   const details = [
     { term: t("about.artist"), value: t("artist.name") },
     { term: t("about.discipline"), value: t("about.visualArts") },
+    { term: t("about.memberships"), value: t("artist.memberships") },
+    { term: t("about.education"), value: t("artist.education") },
+    { term: t("about.formerRole"), value: t("artist.formerRole") },
+    { term: t("about.exhibitionCount"), value: t("artist.exhibitionCount") },
+    { term: t("about.honors"), value: t("artist.honors") },
   ];
 
   return (
     <PanelInner>
       <Layout>
         <Photo data-animate>
-          <WaterCanvas src={aboutShore} playing={isShown} intensity={0.8} />
+          <WaterCanvas src={work02} playing={isShown} intensity={0.8} />
         </Photo>
 
         <Content data-animate>
