@@ -10,10 +10,10 @@ export const Row = styled.li`
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: 100px 1fr 185px 30px;
-  gap: 22px;
-  align-items: center;
-  padding: clamp(17px, 3vh, 32px) 0;
+  grid-template-columns: 80px 1fr 30px;
+  gap: 10px 18px;
+  align-items: start;
+  padding: clamp(10px, 1.6vh, 18px) 0;
   overflow: hidden;
   border-bottom: 1px solid ${({ theme }) => theme.tone.line};
 
@@ -34,7 +34,8 @@ export const Row = styled.li`
 
   h3 {
     ${serif};
-    font-size: clamp(26px, 3.5vw, 53px);
+    font-size: clamp(22px, 2.3vw, 34px);
+    line-height: 1.15;
     transition: transform 0.5s ${({ theme }) => theme.ease};
   }
 
@@ -43,43 +44,46 @@ export const Row = styled.li`
   }
 
   ${media.mobile} {
-    grid-template-columns: 60px 1fr 20px;
-    gap: 10px;
-  }
-  ${media.xsmall} {
-    padding: 20px 0;
+    grid-template-columns: 55px 1fr 20px;
+    gap: 7px 10px;
 
     h3 {
-      font-size: clamp(26px, 6vw, 39px);
+      font-size: clamp(18px, 4vw, 25px);
     }
   }
+  ${media.xsmall} {
+    padding: 8px 0;
+  }
   ${media.shorter} {
-    padding: 10px 0;
+    padding: 6px 0;
   }
 `;
 
 export const Year = styled.span`
+  grid-row: 1 / 3;
   font-size: 13px;
   color: ${({ theme }) => theme.colors.sky};
+
+  ${media.mobile} {
+    font-size: 10px;
+  }
 `;
 
 export const Place = styled.p`
+  grid-column: 2;
+  grid-row: 2;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.45;
   color: ${({ theme }) => theme.tone.muted};
 
   ${media.mobile} {
-    grid-column: 2;
-    grid-row: 2;
+    font-size: 10px;
   }
 `;
 
 export const Arrow = styled.span`
+  grid-column: 3;
+  grid-row: 1 / 3;
   font-size: 23px;
   text-align: right;
-
-  ${media.mobile} {
-    grid-column: 3;
-    grid-row: 1 / 3;
-  }
 `;
