@@ -127,7 +127,7 @@ export function ArtworkModal() {
         <Body>
           <Category>{category}</Category>
           <Title id="artwork-title">{title}</Title>
-          <Description>{description}</Description>
+          {description && <Description>{description}</Description>}
 
           <Meta>
             <p>{t("artwork.year")} / {work.year}</p>

@@ -1,4 +1,4 @@
-import heroOcean from "../../assets/img/hero-ocean.png";
+import work01 from "../../assets/img/artist/work-01.png";
 import { usePanel } from "../../components/common/Panel";
 import { Label } from "../../components/common/Typography";
 import { WaterCanvas } from "../../components/effects/WaterCanvas";
@@ -26,7 +26,7 @@ export function Hero() {
 
   return (
     <>
-      <WaterCanvas src={heroOcean} playing={isShown} />
+      <WaterCanvas src={work01} playing={isShown} />
       <Overlay />
 
       <GridLines aria-hidden="true">
@@ -48,7 +48,7 @@ export function Hero() {
             <br />
             {t("hero.descriptionSecond")}
           </p>
-          <span>{t("hero.selected")} / {ARTIST.year}</span>
+          <span>{t("hero.selected")} / {t("artist.location")}</span>
         </Sub>
       </Content>
 
