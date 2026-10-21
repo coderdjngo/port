@@ -1,71 +1,112 @@
-import featuredWave from "../assets/img/featured-wave.png";
-import featuredHorizon from "../assets/img/featured-horizon.png";
+import { ARTWORKS } from "./artworks";
 
 export const ARTIST = {
-  name: "Moon Kyung Ae",
-  email: "artist@example.com",
-  year: 2026,
+  name: "Moon, Kyung Ae",
+  year: new Date().getFullYear(),
+  socials: [
+    { name: "Instagram", href: "https://instagram.com/gomtiiiing/" },
+    { name: "Facebook", href: "https://www.facebook.com/GomTiiing" },
+  ],
 };
 
-export const FEATURED_WORKS = [
-  {
-    id: "001",
-    title: "Traces of Silence",
-    titleKo: "침묵의 흔적",
-    meta: "PAINTING · 2025",
-    metaKo: "회화 · 2025",
-    category: "Painting",
-    categoryKo: "회화",
-    year: "2025",
-    medium: "Painting",
-    mediumKo: "회화",
-    description: "A quiet study of waves, where movement leaves a lasting trace of silence.",
-    descriptionKo: "파도의 움직임이 지나간 자리에 남는 고요한 흔적을 담은 작품입니다.",
-    image: featuredWave,
-    alt: "대표 작품 — 부서지는 파도",
-    altEn: "Featured artwork — breaking waves",
-    size: "large",
-  },
-  {
-    id: "002",
-    title: "Fragments of Light",
-    titleKo: "빛의 파편",
-    meta: "MIXED MEDIA · 2024",
-    metaKo: "혼합 매체 · 2024",
-    category: "Mixed Media",
-    categoryKo: "혼합 매체",
-    year: "2024",
-    medium: "Mixed Media",
-    mediumKo: "혼합 매체",
-    description: "Fragments of light and color come together to suggest a distant horizon.",
-    descriptionKo: "빛과 색의 조각이 모여 저 멀리의 수평선을 그려내는 작품입니다.",
-    image: featuredHorizon,
-    alt: "대표 작품 — 노을 진 수평선",
-    altEn: "Featured artwork — a sunset horizon",
-    size: "small",
-  },
-];
+export const FEATURED_WORKS = ARTWORKS.slice(0, 2).map((work, index) => ({
+  ...work,
+  id: String(index + 1).padStart(3, "0"),
+  meta: index === 0 ? "ACRYLIC ON CANVAS · 2025" : "PAINTING",
+  metaKo: index === 0 ? "아크릴릭 온 캔버스 · 2025" : "회화",
+  alt: index === 0 ? "에머럴드불루의 변주" : "문경애 작가 작품 02",
+  altEn: index === 0 ? "Variations in Emerald Blue" : "Painting by Moon, Kyung Ae, work 02",
+  size: index === 0 ? "large" : "small",
+}));
 
 export const EXHIBITIONS = [
   {
-    year: "2026",
-    title: "Echoes of Memory",
-    titleKo: "기억의 메아리",
-    place: "Sample Exhibition / Seoul",
-    placeKo: "예시 전시 / 서울",
-  },
-  {
     year: "2025",
-    title: "The Space Between",
-    titleKo: "사이의 공간",
-    place: "Sample Group Show / Seoul",
-    placeKo: "예시 단체전 / 서울",
+    title: "Group exhibition",
+    titleKo: "단체전",
+    events: [
+      "향(香)과 형(形) 두루회원전 (커피1011, 대전)",
+      "열개의 문 전 (특허연수원, 대전)",
+      "대전미술제 (대전예술가의집, 대전)",
+      "아트포아트 300인전시 (아트포아트, 대전)",
+      "새롭게걷다전 (M갤러리, 대전)",
+    ],
   },
   {
     year: "2024",
-    title: "Fragments of Time",
-    titleKo: "시간의 파편",
-    place: "Sample Exhibition / Busan",
-    placeKo: "예시 전시 / 부산",
+    title: "Group exhibition",
+    titleKo: "단체전",
+    events: [
+      "오늘은맛있는그림전 (카페1011, 대전)",
+      "새롭게걷다전 (M갤러리, 대전)",
+      "두루미전시 (갑동 헤비츠갤러리, 3월)",
+      "대전미술제 (예술가의집, 3월)",
+      "두루미전시 담소화락 (윤갤러리, 6월)",
+      "이코노텍스트전 (이공갤러리, 8월)",
+    ],
+  },
+  {
+    year: "2023",
+    title: "Solo exhibition",
+    titleKo: "개인전",
+    events: ["검은푸른_어디쯤 (갤러리고트빈, 대전)"],
+  },
+  {
+    year: "2023",
+    title: "Group exhibition",
+    titleKo: "단체전",
+    events: [
+      "이코노텍스트전 (갤러리고트빈, 대전)",
+      "커피1011 특별전 (카페1011, 대전)",
+      "개별적 형상전 (ZEN갤러리, 대전)",
+      "대전예술지 vol.332 지상갤러리 (2023년 1월호)",
+    ],
+  },
+  {
+    year: "2022",
+    title: "Group exhibition",
+    titleKo: "단체전",
+    events: ["이코노텍스트전 (갤러리고트빈, 대전)"],
+  },
+  {
+    year: "2021",
+    title: "Group exhibition",
+    titleKo: "단체전",
+    events: [
+      "예치과갤러리 초대전 (예치과, 대전)",
+      "시뮬라시옹전 (꼬시꼬시, 대전)",
+    ],
+  },
+  {
+    year: "2019",
+    title: "Group exhibition",
+    titleKo: "단체전",
+    events: ["바라보다전 (M갤러리, 대전)", "자늑자늑전 (M갤러리, 대전)"],
+  },
+  {
+    year: "2019",
+    title: "Other exhibition",
+    titleKo: "기타 전시",
+    events: ["바른나무 木가구전 (갤러리고트빈, 대전)"],
+  },
+  {
+    year: "2017",
+    title: "Other exhibition",
+    titleKo: "기타 전시",
+    events: ["한국목공교육협회 목공작품전 (타임월드, 대전)"],
+  },
+  {
+    year: "—",
+    yearKo: "—",
+    title: "Awards",
+    titleKo: "입선 및 특선",
+    events: [
+      "대전광역시미술대전 입선 및 특선",
+      "금강미술대전 입선 및 특선",
+      "여성미술대전 입선 및 특선",
+    ],
   },
 ];
+
+export const EXHIBITION_PAGE_SIZE = 5;
+export const EXHIBITION_PAGE_COUNT = Math.ceil(EXHIBITIONS.length / EXHIBITION_PAGE_SIZE);
