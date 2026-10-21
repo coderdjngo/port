@@ -3,22 +3,22 @@ import { FilterBar } from "../../components/artwork/FilterBar";
 import { Container } from "../../components/common/Container";
 import { PanelInner } from "../../components/common/Panel";
 import { SectionHead } from "../../components/common/SectionHead";
+import { ARCHIVE_PAGE_SIZE } from "../../constants/artworks";
 import { useArtworks } from "../../contexts/ArtworkContext";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { useSectionLink } from "../../hooks/useSectionLink";
 import { Bottom, PageLink } from "./styles";
 
-export function Archive({ page, titleKey, descriptionKey, link }) {
+export function Archive({ page, pageCount, titleKey, descriptionKey }) {
   const { artworks } = useArtworks();
   const { t } = useLanguage();
-  const linkProps = useSectionLink(link.to);
+  const previousLink = useSectionLink(`archive${page}`);
+  const nextLink = useSectionLink(`archive${page + 2}`);
   const status = (
     <span>
       {t("archive.collection")} / {artworks.length} {t("archive.works")}
     </span>
   );
-  const pageLink = <PageLink {...linkProps}>{t(link.textKey)}</PageLink>;
-  const isNext = link.direction === "next";
 
   return (
     <PanelInner>
@@ -32,8 +32,17 @@ export function Archive({ page, titleKey, descriptionKey, link }) {
         <FilterBar />
         <ArtGrid page={page} />
         <Bottom>
-          {isNext ? status : pageLink}
-          {isNext ? pageLink : status}
+          {page > 0 ? (
+            <PageLink {...previousLink}>{t("archive.previous")}</PageLink>
+          ) : (
+            <span />
+          )}
+          {status}
+          {page < pageCount - 1 ? (
+            <PageLink {...nextLink}>{t("archive.next")}</PageLink>
+          ) : (
+            <span />
+          )}
         </Bottom>
       </Container>
     </PanelInner>
