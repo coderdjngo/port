@@ -4,7 +4,7 @@ import { Label } from "../../components/common/Typography";
 import { FlowingWaves } from "../../components/effects/FlowingWaves";
 import { ARTIST } from "../../constants/content";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { Bottom, Email, Footer, Title } from "./styles";
+import { Bottom, Footer, SocialLink, SocialLinks, Title } from "./styles";
 
 export function Contact() {
   const { t } = useLanguage();
@@ -19,7 +19,13 @@ export function Contact() {
 
         <Bottom data-animate>
           <p>{t("contact.description")}</p>
-          <Email href={`mailto:${ARTIST.email}`}>{ARTIST.email} ↗</Email>
+          <SocialLinks>
+            {ARTIST.socials.map(({ name, href }) => (
+              <SocialLink key={name} href={href} target="_blank" rel="noreferrer">
+                {name} ↗
+              </SocialLink>
+            ))}
+          </SocialLinks>
         </Bottom>
       </Container>
 

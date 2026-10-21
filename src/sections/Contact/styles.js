@@ -48,7 +48,13 @@ export const Bottom = styled.div`
   }
 `;
 
-export const Email = styled.a`
+export const SocialLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 42px);
+`;
+
+export const SocialLink = styled.a`
   padding-bottom: 12px;
   border-bottom: 1px solid #b1d1e6;
   font-size: clamp(16px, 2.3vw, 30px);
