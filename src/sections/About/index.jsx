@@ -1,4 +1,4 @@
-import work02 from "../../assets/img/artist/work-02.png";
+import artistPhoto from "../../assets/img/artist/문경애.jpg";
 import { PanelInner, usePanel } from "../../components/common/Panel";
 import { Label } from "../../components/common/Typography";
 import { WaterCanvas } from "../../components/effects/WaterCanvas";
@@ -22,7 +22,7 @@ export function About() {
     <PanelInner>
       <Layout>
         <Photo data-animate>
-          <WaterCanvas src={work02} playing={isShown} intensity={0.8} />
+          <WaterCanvas src={artistPhoto} playing={isShown} intensity={0.8} />
         </Photo>
 
         <Content data-animate>

@@ -73,7 +73,8 @@ const messages = {
     "about.honors": "AWARDS",
     "artist.memberships": "Daejeon Fine Arts Association · Duru · Econotext",
     "artist.education": "Graduated from Chungnam National University Graduate School",
-    "artist.formerRole": "Broadcasting and Media Research Institute, ETRI",
+    "artist.formerRole":
+      "Former Broadcasting and Media Research Institute, Electronics and Telecommunications Research Institute (ETRI)",
     "artist.exhibitionCount": "1 solo · 21 group exhibitions",
     "artist.honors": "Selected and received special mention · Daejeon, Geumgang, and Women's Art Competitions",
     "exhibitions.label": "04 / ARTIST'S JOURNEY",
@@ -169,7 +170,7 @@ const messages = {
     "about.honors": "수상",
     "artist.memberships": "대전미술협회 · 미술단체 두루 · 이코노텍스트",
     "artist.education": "충남대학교 대학원 졸업",
-    "artist.formerRole": "한국전자통신연구원 방송미디어연구소",
+    "artist.formerRole": "前 한국전자통신연구원(ETRI) 방송미디어연구소",
     "artist.exhibitionCount": "개인전 1회 · 단체전 21회",
     "artist.honors": "대전광역시미술대전 · 금강미술대전 · 여성미술대전 입선 및 특선",
     "exhibitions.label": "04 / 작가의 여정",

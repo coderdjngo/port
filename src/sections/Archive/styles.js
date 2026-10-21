@@ -14,9 +14,15 @@ export const Bottom = styled.div`
 export const PageLink = styled.a`
   padding-bottom: 6px;
   border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  letter-spacing: 0.06em;
   transition: color 0.3s;
 
   &:hover {
     color: ${({ theme }) => theme.colors.sky};
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `;
