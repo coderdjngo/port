@@ -8,7 +8,6 @@ import { useLanguage } from "../../contexts/LanguageContext";
 import {
   Content,
   Curve,
-  GridLines,
   Interaction,
   Kicker,
   Overlay,
@@ -18,8 +17,6 @@ import {
   Title,
 } from "./styles";
 
-const GRID_COLUMNS = 4;
-
 export function Hero() {
   const { isShown } = usePanel();
   const { language, t } = useLanguage();
@@ -28,12 +25,6 @@ export function Hero() {
     <>
       <WaterCanvas src={work01} playing={isShown} />
       <Overlay />
-
-      <GridLines aria-hidden="true">
-        {Array.from({ length: GRID_COLUMNS }, (_, i) => (
-          <span key={i} />
-        ))}
-      </GridLines>
 
       <Content>
         <Kicker data-animate>
