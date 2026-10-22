@@ -3,8 +3,6 @@ import { Label } from "../../components/common/Typography";
 import { media } from "../../styles/media";
 import { coverLayer, serif } from "../../styles/mixins";
 
-const GRID_LINE = "#ffffff2f";
-
 const drip = keyframes`
   from { transform: translateY(-100%); }
   to { transform: translateY(100%); }
@@ -17,39 +15,6 @@ export const Overlay = styled.div`
   background:
     linear-gradient(90deg, #061725ad, transparent 75%),
     linear-gradient(0deg, #041421b5, transparent 50%);
-`;
-
-export const GridLines = styled.div`
-  position: absolute;
-  inset: ${({ theme }) => theme.layout.header} ${({ theme }) => theme.layout.side} 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  pointer-events: none;
-
-  span {
-    border-left: 1px solid ${GRID_LINE};
-  }
-  span:last-child {
-    border-right: 1px solid ${GRID_LINE};
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 43%;
-    height: 1px;
-    background: ${GRID_LINE};
-  }
-
-  ${media.mobile} {
-    grid-template-columns: repeat(2, 1fr);
-
-    span:nth-child(n + 3) {
-      display: none;
-    }
-  }
 `;
 
 export const Content = styled.div`
