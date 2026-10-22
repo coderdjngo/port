@@ -19,20 +19,20 @@ export function Exhibitions({ page }) {
           label={t("exhibitions.label")}
           title={
             <>
-              {t(page === 0 ? "exhibitions.title" : "exhibitions.moreTitle")}
+              {t("exhibitions.title")}
               <br />
-              {t(page === 0 ? "exhibitions.titleSecond" : "exhibitions.moreTitleSecond")}
+              {t("exhibitions.titleSecond")}
             </>
           }
           description={t("exhibitions.description")}
         />
 
         <List>
-          {exhibitions.map(({ year, yearKo, title, titleKo, events }) => (
-            <Row key={`${year}-${titleKo}-${events[0]}`} data-animate>
+          {exhibitions.map(({ year, yearKo, title, titleKo, entries }) => (
+            <Row key={`${year}-${titleKo}-${entries[0]}`} data-animate>
               <Year>{language === "ko" ? yearKo ?? year : year}</Year>
               <h3>{language === "ko" ? titleKo : title}</h3>
-              <Place>{events.join(" · ")}</Place>
+              <Place>{entries.join(" · ")}</Place>
               <Arrow aria-hidden="true">↗</Arrow>
             </Row>
           ))}

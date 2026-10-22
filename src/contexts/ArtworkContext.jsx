@@ -1,16 +1,14 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import { ARTWORKS } from "../constants/artworks";
 import { FEATURED_WORKS } from "../constants/content";
-import { filterArtworks } from "../utils/archive";
 
 const ArtworkContext = createContext(null);
 
 export function ArtworkProvider({ children }) {
-  const [category, setCategory] = useState("all");
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [modalArtworks, setModalArtworks] = useState([]);
 
-  const artworks = useMemo(() => filterArtworks(ARTWORKS, category), [category]);
+  const artworks = ARTWORKS;
   const isModalOpen = selectedIndex !== null;
 
   const openArtwork = useCallback(
@@ -34,11 +32,6 @@ export function ArtworkProvider({ children }) {
 
   const value = useMemo(
     () => ({
-      // 현재 선택된 필터 값 ("all" | "painting" | "photography" | "mixed")
-      category,
-      // 필터 변경 함수 — FilterBar 버튼 클릭 시 호출
-      setCategory,
-      // category로 걸러진 작품 목록 (ArtGrid에서 사용)
       artworks,
       // 현재 모달의 작품 목록 (아카이브 또는 대표 작품)
       modalArtworks,
@@ -58,8 +51,6 @@ export function ArtworkProvider({ children }) {
       stepArtwork,
     }),
     [
-      category,
-      artworks,
       modalArtworks,
       selectedIndex,
       isModalOpen,

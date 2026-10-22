@@ -20,8 +20,6 @@ const ARCHIVE_SECTIONS = Array.from({ length: ARCHIVE_PAGE_COUNT }, (_, page) =>
   props: {
     page,
     pageCount: ARCHIVE_PAGE_COUNT,
-    titleKey: page === 0 ? "archive.title" : "archive.moreTitle",
-    descriptionKey: page === 0 ? "archive.description" : "archive.moreDescription",
   },
 }));
 

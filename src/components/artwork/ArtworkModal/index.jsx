@@ -104,7 +104,6 @@ export function ArtworkModal() {
     if (event.target === event.currentTarget) closeArtwork();
   };
   const title = language === "ko" ? work.titleKo : work.title;
-  const category = language === "ko" ? work.categoryKo : work.category;
   const medium = language === "ko" ? work.mediumKo : work.medium;
   const description = language === "ko" ? work.descriptionKo : work.description;
 
@@ -125,7 +124,7 @@ export function ArtworkModal() {
         </Photo>
 
         <Body>
-          <Category>{category}</Category>
+          <Category>{t("artwork.category")}</Category>
           <Title id="artwork-title">{title}</Title>
           {description && <Description>{description}</Description>}
 

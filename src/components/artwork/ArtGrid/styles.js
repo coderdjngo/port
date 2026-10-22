@@ -13,7 +13,3 @@ export const Grid = styled.div`
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
-
-export const Empty = styled.p`
-  color: ${({ theme }) => theme.tone.muted};
-`;

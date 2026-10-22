@@ -13,11 +13,6 @@ import work12 from "../assets/img/artist/work-12.png";
 import work13 from "../assets/img/artist/work-13.png";
 import work14 from "../assets/img/artist/work-14.png";
 
-export const ARTWORK_CATEGORIES = [
-  { value: "all", labelKey: "archive.all" },
-  { value: "painting", labelKey: "archive.painting" },
-];
-
 export const ARCHIVE_PAGE_SIZE = 3;
 
 const artworkImages = [
@@ -44,9 +39,7 @@ export const ARTWORKS = artworkImages.map((image, index) => {
   return {
     id: index + 1,
     title: isNamedWork ? "Variations in Emerald Blue" : `Artwork ${number}`,
-    titleKo: isNamedWork ? "에머럴드불루의 변주" : `작품 ${number}`,
-    category: "painting",
-    categoryKo: "회화",
+    titleKo: isNamedWork ? "에메랄드 블루의 변주" : `작품 ${number}`,
     year: isNamedWork ? "2025" : "—",
     medium: isNamedWork ? "Acrylic on canvas · 31.8 × 40.9 cm (6F)" : "Painting",
     mediumKo: isNamedWork ? "아크릴릭 온 캔버스 · 31.8 × 40.9cm (6F)" : "회화",

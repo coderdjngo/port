@@ -1,5 +1,4 @@
 import { ArtGrid } from "../../components/artwork/ArtGrid";
-import { FilterBar } from "../../components/artwork/FilterBar";
 import { Container } from "../../components/common/Container";
 import { PanelInner } from "../../components/common/Panel";
 import { SectionHead } from "../../components/common/SectionHead";
@@ -9,7 +8,7 @@ import { useLanguage } from "../../contexts/LanguageContext";
 import { useSectionLink } from "../../hooks/useSectionLink";
 import { Bottom, PageLink } from "./styles";
 
-export function Archive({ page, pageCount, titleKey, descriptionKey }) {
+export function Archive({ page, pageCount }) {
   const { artworks } = useArtworks();
   const { t } = useLanguage();
   const previousLink = useSectionLink(`archive${page}`);
@@ -26,10 +25,9 @@ export function Archive({ page, pageCount, titleKey, descriptionKey }) {
         <SectionHead
           compact
           label={t("archive.label")}
-          title={t(titleKey)}
-          description={t(descriptionKey)}
+          title={t("archive.title")}
+          description={t("archive.description")}
         />
-        <FilterBar />
         <ArtGrid page={page} />
         <Bottom>
           {page > 0 ? (
